@@ -15,7 +15,7 @@ export const Container = styled.div`
 
   background-color: #fff;
 
-  box-shadow: 0 0.375 1.5rem rgba(84, 16, 95, 0.13);
+  box-shadow: 0 0.375rem 1.5rem rgba(84, 16, 95, 0.13);
 
   img {
     width: 81px;
@@ -23,7 +23,7 @@ export const Container = styled.div`
   }
 
   &:hover {
-    box-shadow: 0 0.375 1.5rem rgba(84, 16, 95, 0.25);
+    box-shadow: 0 0.375rem 1.5rem rgba(84, 16, 95, 0.25);
     cursor: pointer;
   }
 `
