@@ -1,0 +1,44 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Book should render correctly 1`] = `
+<div>
+  <div
+    class="sc-bczRLJ coAeEP"
+  >
+    <img
+      alt=""
+      src="https://d2drtqy2ezsot0.cloudfront.net/Book-0.jpg"
+    />
+    <div
+      class="sc-gsnTZi dCjbor"
+    >
+      <div
+        class="sc-dkzDqf eldxCs"
+      >
+        <h1>
+          A Culpa é das Estrelas
+        </h1>
+        <h2>
+          Jonh Green
+        </h2>
+      </div>
+      <div
+        class="sc-hKMtZM krcvoh"
+      >
+        <p>
+          288
+           páginas
+        </p>
+        <p>
+          Editora 
+          Intrínseca
+        </p>
+        <p>
+          Publicado em 
+          2002
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+`;
