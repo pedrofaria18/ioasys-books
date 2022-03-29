@@ -15,7 +15,7 @@ Para rodar o projeto localmente é necessário seguir os seguintes passos:
 ## Rodar o teste
 
 Para rodar os testes do projeto é necessário seguir os seguintes passos: </br></br>
-(OBS: caso já tenha rodado o projeto localmente basta fazer o terceiro passo)
+ (OBS: caso já tenha rodado o projeto localmente basta fazer o terceiro passo)
   - Fazer o clone do projeto eu seu computador: `git clone https://github.com/pedrofaria18/ioasys-books.git`
   - Fazer a instalação do projeto: `yarn` ou `yarn install`
   - Startar o projeto: `yarn test`
