@@ -1,8 +1,6 @@
 import styled from 'styled-components'
 
 export const Container = styled.div`
-  width: 769px;
-
   display: flex;
   align-items: center;
   justify-content: center;
@@ -10,27 +8,21 @@ export const Container = styled.div`
   gap: 3rem;
 
   @media (max-width: 768px) {
-    width: 100%;
     flex-direction: column;
+    align-items: center;
+    justify-content: center;
 
     img {
       width: 240px;
       height: 351px;
     }
-
-    padding: 0 1rem;
   }
 `
 
 export const Content = styled.div`
-  width: 276px;
   display: flex;
   flex-direction: column;
   justify-content: center;
-
-  @media (max-width: 768px) {
-    width: 90%;
-  }
 `
 
 export const Infos = styled.div`

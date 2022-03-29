@@ -5,5 +5,5 @@ interface IError {
 }
 
 export function Error({ error }: IError) {
-  return <Container>{error}</Container>
+  return <Container data-testid="error">{error}</Container>
 }

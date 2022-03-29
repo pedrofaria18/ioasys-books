@@ -13,6 +13,4 @@ export const Container = styled.button`
   background: transparent;
 
   border: 1px solid rgba(51, 51, 51, 0.2);
-
-  cursor: pointer;
 `
