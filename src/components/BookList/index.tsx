@@ -20,14 +20,13 @@ export function BookList() {
     toogleModalBookDetails()
   }
 
-  if (!books) return <h1>Carregando</h1>
+  if (books.length === 0) return <Container>Nenhum livro encontrado</Container>
 
   return (
     <Container>
-      {books &&
-        books.map((book) => (
-          <Book key={book.id} book={book} onClick={handleBookDetails} />
-        ))}
+      {books.map((book) => (
+        <Book key={book.id} book={book} onClick={handleBookDetails} />
+      ))}
 
       {bookSelected.id && (
         <BookDetailsModal

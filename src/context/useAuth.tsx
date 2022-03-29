@@ -34,11 +34,13 @@ export function AuthProvider({ children }: { children: ReactNode }) {
   const [loading, setLoading] = useState<boolean>(true)
 
   useEffect(() => {
+    const token = localStorage.getItem('token')
     const user = localStorage.getItem('user')
 
-    if (user) {
+    if (token && user) {
       setAuthenticated(true)
       setUser(JSON.parse(user))
+      api.defaults.headers.common.Authorization = `Bearer ${token}`
     }
 
     setLoading(false)
