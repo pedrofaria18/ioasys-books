@@ -12,6 +12,10 @@ export const Container = styled.div`
   @media (max-width: 1100px) {
     padding: 0 1rem;
   }
+
+  @media (max-width: 700px) {
+    justify-content: center;
+  }
 `
 
 export const ButtonGroup = styled.div`
