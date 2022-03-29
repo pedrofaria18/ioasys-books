@@ -1,7 +1,8 @@
+import { ReactNode } from 'react'
 import { Container } from './styles'
 
-interface IIconButton {
-  icon: React.ReactNode
+export interface IIconButton {
+  icon: ReactNode
   onClick: () => void
   id?: string
 }

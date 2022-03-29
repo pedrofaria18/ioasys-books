@@ -2,7 +2,7 @@ import LogoSVG from '../../assets/Logo.svg'
 import LogoWhiteSVG from '../../assets/LogoWhite.svg'
 import { Container } from './styles'
 
-interface ILogo {
+export interface ILogo {
   isWhite?: boolean
 }
 
