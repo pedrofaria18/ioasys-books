@@ -15,7 +15,7 @@ export function Login() {
     if (authenticated) {
       navigate('/')
     }
-  })
+  }, [])
 
   return (
     <Container>

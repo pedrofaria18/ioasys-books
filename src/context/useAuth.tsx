@@ -34,13 +34,13 @@ export function AuthProvider({ children }: { children: ReactNode }) {
   const [loading, setLoading] = useState<boolean>(true)
 
   useEffect(() => {
-    const token = localStorage.getItem('token')
-    const user = localStorage.getItem('user')
+    const token = localStorage.getItem('@Ioasys:Token')
+    const refreshToken = localStorage.getItem('@Ioasys:RefreshToken')
+    const user = localStorage.getItem('@Ioasys:User')
 
-    if (token && user) {
+    if (token && refreshToken && user) {
       setAuthenticated(true)
       setUser(JSON.parse(user))
-      api.defaults.headers.common.Authorization = `Bearer ${token}`
     }
 
     setLoading(false)
@@ -60,8 +60,8 @@ export function AuthProvider({ children }: { children: ReactNode }) {
 
         api.defaults.headers.common.Authorization = `Bearer ${token}`
 
-        setUser(userData)
         setError(false)
+        setUser(userData)
         setAuthenticated(true)
         navigate('/')
       })

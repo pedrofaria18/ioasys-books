@@ -85,7 +85,9 @@
     "react/require-default-props": "off",
     "react/jsx-no-constructed-context-values": "off",
     "no-param-reassign": "off",
-    "react/jsx-props-no-spreading": "off"
+    "react/jsx-props-no-spreading": "off",
+    "consistent-return": "off",
+    "no-promise-executor-return": "off"
   },
   "settings": {
     "import/resolver": {
