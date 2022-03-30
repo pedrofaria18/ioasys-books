@@ -22,18 +22,7 @@ const BooksContext = createContext({} as IBooksData)
 export function BooksProvider({ children }: { children: ReactNode }) {
   const [books, setBooks] = useState<IBookResponse[]>([])
   const [bookSelected, setBookSelected] = useState({} as IBookResponse)
-  const [totalPages, setTotalPages] = useState(1)
-
-  useEffect(() => {
-    async function loadBooks() {
-      await api.get(`/books?page=1&amount=12`).then((response) => {
-        setBooks(response.data.data)
-        setTotalPages(response.data.totalPages.toFixed())
-      })
-    }
-
-    loadBooks()
-  }, [])
+  const [totalPages, setTotalPages] = useState<number>(1)
 
   async function loadBooksByPage(page: number) {
     await api.get(`/books?page=${page}&amount=12`).then((response) => {
@@ -47,6 +36,14 @@ export function BooksProvider({ children }: { children: ReactNode }) {
       setBookSelected(response.data)
     })
   }
+
+  useEffect(() => {
+    async function loadBooks() {
+      await loadBooksByPage(1)
+    }
+
+    loadBooks()
+  }, [])
 
   return (
     <BooksContext.Provider

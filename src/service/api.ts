@@ -1,11 +1,13 @@
 import axios from 'axios'
 
+const BASE_URL = 'https://books.ioasys.com.br/api/v1'
+
 export const api = axios.create({
-  baseURL: 'https://books.ioasys.com.br/api/v1',
+  baseURL: BASE_URL,
 })
 
 api.interceptors.request.use((config) => {
-  const token = localStorage.getItem('token')
+  const token = localStorage.getItem('@Ioasys:Token')
 
   if (config?.headers && token) {
     config.headers.Authorization = `Bearer ${token}`
@@ -18,7 +20,7 @@ api.interceptors.response.use(
 
   async (error) => {
     if (error.response.status === 401) {
-      const refreshTokenStorage = localStorage.getItem('refreshToken')
+      const refreshTokenStorage = localStorage.getItem('@Ioasys:RefreshToken')
       const { headers } = await api.post('/auth/refresh-token', {
         refreshToken: refreshTokenStorage,
       })
@@ -26,8 +28,8 @@ api.interceptors.response.use(
         const token = headers.authorization
         const refreshToken = headers['refresh-token']
 
-        localStorage.setItem('token', token)
-        localStorage.setItem('refreshToken', refreshToken)
+        localStorage.setItem('@Ioasys:Token', token)
+        localStorage.setItem('@Ioasys:RefreshToken', refreshToken)
         api.defaults.headers.common.Authorization = `Bearer ${token}`
       }
 

@@ -54,9 +54,9 @@ export function AuthProvider({ children }: { children: ReactNode }) {
         const token = response.headers.authorization
         const refreshToken = response.headers['refresh-token']
 
-        localStorage.setItem('user', JSON.stringify(userData))
-        localStorage.setItem('token', token)
-        localStorage.setItem('refreshToken', refreshToken)
+        localStorage.setItem('@Ioasys:User', JSON.stringify(userData))
+        localStorage.setItem('@Ioasys:Token', token)
+        localStorage.setItem('@Ioasys:RefreshToken', refreshToken)
 
         api.defaults.headers.common.Authorization = `Bearer ${token}`
 
@@ -71,9 +71,9 @@ export function AuthProvider({ children }: { children: ReactNode }) {
   }
 
   async function logout() {
-    localStorage.removeItem('token')
-    localStorage.removeItem('user')
-    localStorage.removeItem('refreshToken')
+    localStorage.removeItem('@Ioasys:User')
+    localStorage.removeItem('@Ioasys:Token')
+    localStorage.removeItem('@Ioasys:RefreshToken')
 
     setUser({} as IUserResponse)
     setAuthenticated(false)

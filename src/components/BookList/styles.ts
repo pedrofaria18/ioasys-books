@@ -15,3 +15,13 @@ export const Container = styled.div`
     padding: 0px 1rem;
   }
 `
+
+export const ContainerLoading = styled.div`
+  width: 100%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  height: 50vh;
+`

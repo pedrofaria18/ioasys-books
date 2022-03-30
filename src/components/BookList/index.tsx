@@ -4,7 +4,7 @@ import { useBooks } from '../../context/useBooks'
 import { IBookResponse } from '../../types/book'
 import { Book } from '../Book'
 import { BookDetailsModal } from '../BookDatailsModal'
-import { Container } from './styles'
+import { Container, ContainerLoading } from './styles'
 
 export function BookList() {
   const { books, bookSelected, handleBookDetailsSelected } = useBooks()
@@ -20,7 +20,8 @@ export function BookList() {
     toogleModalBookDetails()
   }
 
-  if (books.length === 0) return <Container>Nenhum livro encontrado</Container>
+  if (books.length === 0)
+    return <ContainerLoading>Nenhum livro encontrado</ContainerLoading>
 
   return (
     <Container>
