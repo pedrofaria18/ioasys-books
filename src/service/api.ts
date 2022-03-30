@@ -28,7 +28,7 @@ api.interceptors.response.use(
 
         localStorage.setItem('token', token)
         localStorage.setItem('refreshToken', refreshToken)
-        api.defaults.headers.common.Authorization = `Bearer ${headers.authorization}`
+        api.defaults.headers.common.Authorization = `Bearer ${token}`
       }
 
       return axios(error.config)
