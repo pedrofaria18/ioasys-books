@@ -1,14 +1,17 @@
-import { FiLogOut, FiChevronRight, FiChevronLeft  } from "react-icons/fi";
-import { IconButton } from ".";
+import { ComponentMeta, ComponentStory } from '@storybook/react'
+import { FiLogOut } from 'react-icons/fi'
 
-import {ComponentMeta, ComponentStory} from "@storybook/react"
+import { IconButton } from '.'
 
 export default {
   title: 'IconButton',
   component: IconButton,
 } as ComponentMeta<typeof IconButton>
 
-const Template: ComponentStory<typeof IconButton> = (args) => <IconButton {...args} />
+// eslint-disable-next-line react/function-component-definition
+const Template: ComponentStory<typeof IconButton> = (args) => (
+  <IconButton {...args} />
+)
 
 export const Default = Template.bind({})
 

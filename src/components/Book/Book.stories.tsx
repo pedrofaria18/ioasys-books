@@ -1,12 +1,13 @@
-import { Book } from '.'
-
 import { ComponentMeta, ComponentStory } from '@storybook/react'
+
+import { Book } from '.'
 
 export default {
   title: 'Book',
   component: Book,
 } as ComponentMeta<typeof Book>
 
+// eslint-disable-next-line react/function-component-definition
 const Template: ComponentStory<typeof Book> = (args) => <Book {...args} />
 
 export const Default = Template.bind({})
